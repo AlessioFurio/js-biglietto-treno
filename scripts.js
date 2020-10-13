@@ -1,24 +1,29 @@
 
 // chiedere all' utente quanti km deve percorrere
-var km = prompt ('Quanti km devi percorrere?');
+var km = parseInt(prompt ('Quanti km devi percorrere?'));
 console.log ('Devi percorrere ' + km + ' km');
 
 //controllo input km
 
 if (!isNaN(km)) {
 
-    console.log('Hai digitato un valore corretto quindi hai digitato un numero');
+    console.log('Hai digitato un valore corretto quindi hai digitato un numero quindi puoi procedere...');
 
-    var eta = prompt ('Quanti anni hai?');
+    // chiedere all' utente quanti anni
+    var eta = parseInt(prompt ('Quanti anni hai?'));
     console.log ('Hai ' + eta + ' anni');
 
+    // controllo input eta
     if (!isNaN(eta)) {
-        console.log('Hai digitato un valore corretto quindi hai digitato un numero');
+        console.log('Hai digitato un valore corretto quindi hai digitato un numero quindi puoi procedere...');
+
+        //dichiarazione variabili costo dei biglietti
 
         var costo_bigl = (km * 0.21);
         var costo_bigl_minorenne = (costo_bigl - (costo_bigl * 20) /100);
         var costo_bigl_over = (costo_bigl - (costo_bigl * 40) /100);
 
+        // se < 18, applica sconto di 20%
         if (eta < 18){
             console.log ('Complimenti! Hai diritto a uno sconto del 20%, perciò il prezzo del tuo biglietto è di: ' + costo_bigl_minorenne + '€' + ' anzichè ' + costo_bigl);
         }
@@ -31,11 +36,13 @@ if (!isNaN(km)) {
             console.log ('Uff! Non hai diritto a nessuno sconto, perciò il prezzo del tuo biglietto è di: ' + costo_bigl + '€');}
     }
 
+    // esce dall' algoritmo perchè non è stato digitato un numero per eta
     else {
-        console.log('Hai digitato un valore non corretto quindi non hai digitato un numero');
+        console.log('Hai digitato un valore non corretto quindi non hai digitato un numero quindi ricarica la pagina e inserisci un valore corretto cioè un numero');
     }
 
+// esce dall' algoritmo perchè non è stato digitato un numero per km
 }
 else{
-    console.log('Hai digitato un valore non corretto quindi non hai digitato un numero');
+    console.log('Hai digitato un valore non corretto quindi non hai digitato un numero quindi ricarica la pagina e inserisci un valore corretto cioè un numero');
 }
